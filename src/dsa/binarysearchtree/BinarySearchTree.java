@@ -92,4 +92,24 @@ public class BinarySearchTree {
     }
 
 
+    private Node rInsert(Node current_node, int value){
+
+        if(current_node == null){
+            return new Node(value);
+        }
+
+        if( value > current_node.value){
+            current_node.right = rInsert(current_node.right, value);
+        }else{
+            current_node.left = rInsert(current_node.left, value);
+        }
+        return current_node;
+    }
+
+    public void rInsert(int value){
+
+        rInsert(root, value);
+    }
+
+
 }
